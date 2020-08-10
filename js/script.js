@@ -37,15 +37,16 @@ let personalMovieDB = {
 
 //3
 
-for (let i = 1; i <= 2; i++) {
-    let a = '';
-    while (a.length <= 0)
-   {
-    a = prompt('Один из последних просмотренных фильмов?', '');
-   }
-  let b = prompt('На сколько оцените его?','');
-  personalMovieDB.movies[a] = b;    
+for (let i = 0; i < 2; i++) {
 
+    const a = prompt('Один из последних просмотренных фильмов?', ''),
+          b = prompt('На сколько оцените его?','');
+
+    if (a != null && b != null && a !='' && b != '' && a.length < 50) {
+        personalMovieDB.movies[a] = b;    
+    }  else {
+        i--;
+    }
 }
 
 if (personalMovieDB.count < 10) {
