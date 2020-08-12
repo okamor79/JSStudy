@@ -19,7 +19,13 @@ let personalMovieDB = {
     privat: false
 };
 
-//3
+
+function showMyDB() {
+    if (!personalMovieDB.privat) {
+        console.log(personalMovieDB);
+    }
+}
+
 
 for (let i = 0; i < 2; i++) {
 
@@ -33,6 +39,14 @@ for (let i = 0; i < 2; i++) {
     }
 }
 
+function writeYourGenres(index) {
+    personalMovieDB.genres[index] = prompt(`Ваш любимый жанр под номером ${index + 1}`);
+}
+
+for (let i = 0; i < 3; i++) {
+    writeYourGenres(i);
+}
+
 if (personalMovieDB.count < 10) {
     console.log('Просмотрено довольно мало фильмов');
 } else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
@@ -43,4 +57,7 @@ if (personalMovieDB.count < 10) {
     console.log('Что-то пошло не так');
 }
 
-console.log(personalMovieDB);
+showMyDB();
+
+
+//console.log(personalMovieDB);
