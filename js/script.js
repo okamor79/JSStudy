@@ -49,7 +49,6 @@ let personalMovieDB = {
           genres = prompt(`Введите Ваши любимые жанры через запятую`);
         } while (genres == '' || genres == null);
         personalMovieDB.genres = genres.split(', ').sort();
-        //personalMovieDB.genres;
 
         personalMovieDB.genres.forEach((item, i) => {
             console.log(`Любимый жанр ${i + 1} - это ${item}`);
